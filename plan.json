@@ -1,0 +1,548 @@
+{
+  "2026-05-04": {
+    "tipo": "Easy",
+    "distancia": "5 km",
+    "ritmo": "6:30-7:00/km",
+    "descripcion": "Rodaje suave para empezar la semana. Mantén conversación fluida."
+  },
+  "2026-05-05": {
+    "tipo": "Fuerza",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Circuito de fuerza: sentadillas, zancadas, puente glúteos, core."
+  },
+  "2026-05-06": {
+    "tipo": "Easy",
+    "distancia": "6 km",
+    "ritmo": "6:30-7:00/km",
+    "descripcion": "Rodaje aeróbico base. Si te sientes bien, aprieta un poco al final."
+  },
+  "2026-05-07": {
+    "tipo": "Fuerza",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Fuerza enfocada en core y estabilidad de rodillas."
+  },
+  "2026-05-08": {
+    "tipo": "Easy",
+    "distancia": "4 km",
+    "ritmo": "6:45-7:00/km",
+    "descripcion": "Rodaje muy suave de activación antes del fondo del domingo."
+  },
+  "2026-05-09": {
+    "tipo": "Descanso",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Descanso total. Hidrátate bien para mañana y come carbohidratos."
+  },
+  "2026-05-10": {
+    "tipo": "Long",
+    "distancia": "6 km",
+    "ritmo": "6:45-7:15/km",
+    "descripcion": "Tirada larga. Lleva hidratación y practica tomar geles si usas."
+  },
+  "2026-05-11": {
+    "tipo": "Easy",
+    "distancia": "5 km",
+    "ritmo": "6:30-7:00/km",
+    "descripcion": "Rodaje suave para empezar la semana. Mantén conversación fluida."
+  },
+  "2026-05-12": {
+    "tipo": "Fuerza",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Circuito de fuerza: sentadillas, zancadas, puente glúteos, core."
+  },
+  "2026-05-13": {
+    "tipo": "Easy",
+    "distancia": "6 km",
+    "ritmo": "6:30-7:00/km",
+    "descripcion": "Rodaje aeróbico base. Si te sientes bien, aprieta un poco al final."
+  },
+  "2026-05-14": {
+    "tipo": "Fuerza",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Fuerza enfocada en core y estabilidad de rodillas."
+  },
+  "2026-05-15": {
+    "tipo": "Easy",
+    "distancia": "4 km",
+    "ritmo": "6:45-7:00/km",
+    "descripcion": "Rodaje muy suave de activación antes del fondo del domingo."
+  },
+  "2026-05-16": {
+    "tipo": "Descanso",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Descanso total. Hidrátate bien para mañana y come carbohidratos."
+  },
+  "2026-05-17": {
+    "tipo": "Long",
+    "distancia": "8 km",
+    "ritmo": "6:45-7:15/km",
+    "descripcion": "Tirada larga. Lleva hidratación y practica tomar geles si usas."
+  },
+  "2026-05-18": {
+    "tipo": "Easy",
+    "distancia": "5 km",
+    "ritmo": "6:30-7:00/km",
+    "descripcion": "Rodaje suave para empezar la semana. Mantén conversación fluida."
+  },
+  "2026-05-19": {
+    "tipo": "Fuerza",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Circuito de fuerza: sentadillas, zancadas, puente glúteos, core."
+  },
+  "2026-05-20": {
+    "tipo": "Easy",
+    "distancia": "6 km",
+    "ritmo": "6:30-7:00/km",
+    "descripcion": "Rodaje aeróbico base. Si te sientes bien, aprieta un poco al final."
+  },
+  "2026-05-21": {
+    "tipo": "Fuerza",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Fuerza enfocada en core y estabilidad de rodillas."
+  },
+  "2026-05-22": {
+    "tipo": "Easy",
+    "distancia": "4 km",
+    "ritmo": "6:45-7:00/km",
+    "descripcion": "Rodaje muy suave de activación antes del fondo del domingo."
+  },
+  "2026-05-23": {
+    "tipo": "Descanso",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Descanso total. Hidrátate bien para mañana y come carbohidratos."
+  },
+  "2026-05-24": {
+    "tipo": "Long",
+    "distancia": "10 km",
+    "ritmo": "6:45-7:15/km",
+    "descripcion": "Tirada larga. Lleva hidratación y practica tomar geles si usas."
+  },
+  "2026-05-25": {
+    "tipo": "Easy",
+    "distancia": "4 km",
+    "ritmo": "6:30-7:00/km",
+    "descripcion": "Rodaje suave para empezar la semana. Mantén conversación fluida."
+  },
+  "2026-05-26": {
+    "tipo": "Fuerza",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Circuito de fuerza: sentadillas, zancadas, puente glúteos, core."
+  },
+  "2026-05-27": {
+    "tipo": "Easy",
+    "distancia": "5 km",
+    "ritmo": "6:30-7:00/km",
+    "descripcion": "Rodaje aeróbico base. Si te sientes bien, aprieta un poco al final."
+  },
+  "2026-05-28": {
+    "tipo": "Fuerza",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Fuerza enfocada en core y estabilidad de rodillas."
+  },
+  "2026-05-29": {
+    "tipo": "Easy",
+    "distancia": "4 km",
+    "ritmo": "6:45-7:00/km",
+    "descripcion": "Rodaje muy suave de activación antes del fondo del domingo."
+  },
+  "2026-05-30": {
+    "tipo": "Descanso",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Descanso total. Hidrátate bien para mañana y come carbohidratos."
+  },
+  "2026-05-31": {
+    "tipo": "Long",
+    "distancia": "7 km",
+    "ritmo": "6:45-7:15/km",
+    "descripcion": "Tirada larga. Lleva hidratación y practica tomar geles si usas."
+  },
+  "2026-06-01": {
+    "tipo": "Easy",
+    "distancia": "5 km",
+    "ritmo": "6:30-7:00/km",
+    "descripcion": "Rodaje suave para empezar la semana. Mantén conversación fluida."
+  },
+  "2026-06-02": {
+    "tipo": "Fuerza",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Circuito de fuerza: sentadillas, zancadas, puente glúteos, core."
+  },
+  "2026-06-03": {
+    "tipo": "Easy",
+    "distancia": "6 km",
+    "ritmo": "6:30-7:00/km",
+    "descripcion": "Rodaje aeróbico base. Si te sientes bien, aprieta un poco al final."
+  },
+  "2026-06-04": {
+    "tipo": "Fuerza",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Fuerza enfocada en core y estabilidad de rodillas."
+  },
+  "2026-06-05": {
+    "tipo": "Easy",
+    "distancia": "4 km",
+    "ritmo": "6:45-7:00/km",
+    "descripcion": "Rodaje muy suave de activación antes del fondo del domingo."
+  },
+  "2026-06-06": {
+    "tipo": "Descanso",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Descanso total. Hidrátate bien para mañana y come carbohidratos."
+  },
+  "2026-06-07": {
+    "tipo": "Long",
+    "distancia": "12 km",
+    "ritmo": "6:45-7:15/km",
+    "descripcion": "Tirada larga. Lleva hidratación y practica tomar geles si usas."
+  },
+  "2026-06-08": {
+    "tipo": "Easy",
+    "distancia": "5 km",
+    "ritmo": "6:30-7:00/km",
+    "descripcion": "Rodaje suave para empezar la semana. Mantén conversación fluida."
+  },
+  "2026-06-09": {
+    "tipo": "Fuerza",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Circuito de fuerza: sentadillas, zancadas, puente glúteos, core."
+  },
+  "2026-06-10": {
+    "tipo": "Easy",
+    "distancia": "6 km",
+    "ritmo": "6:30-7:00/km",
+    "descripcion": "Rodaje aeróbico base. Si te sientes bien, aprieta un poco al final."
+  },
+  "2026-06-11": {
+    "tipo": "Fuerza",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Fuerza enfocada en core y estabilidad de rodillas."
+  },
+  "2026-06-12": {
+    "tipo": "Easy",
+    "distancia": "4 km",
+    "ritmo": "6:45-7:00/km",
+    "descripcion": "Rodaje muy suave de activación antes del fondo del domingo."
+  },
+  "2026-06-13": {
+    "tipo": "Descanso",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Descanso total. Hidrátate bien para mañana y come carbohidratos."
+  },
+  "2026-06-14": {
+    "tipo": "Long",
+    "distancia": "14 km",
+    "ritmo": "6:45-7:15/km",
+    "descripcion": "Tirada larga. Lleva hidratación y practica tomar geles si usas."
+  },
+  "2026-06-15": {
+    "tipo": "Easy",
+    "distancia": "5 km",
+    "ritmo": "6:30-7:00/km",
+    "descripcion": "Rodaje suave para empezar la semana. Mantén conversación fluida."
+  },
+  "2026-06-16": {
+    "tipo": "Fuerza",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Circuito de fuerza: sentadillas, zancadas, puente glúteos, core."
+  },
+  "2026-06-17": {
+    "tipo": "Easy",
+    "distancia": "6 km",
+    "ritmo": "6:30-7:00/km",
+    "descripcion": "Rodaje aeróbico base. Si te sientes bien, aprieta un poco al final."
+  },
+  "2026-06-18": {
+    "tipo": "Fuerza",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Fuerza enfocada en core y estabilidad de rodillas."
+  },
+  "2026-06-19": {
+    "tipo": "Easy",
+    "distancia": "4 km",
+    "ritmo": "6:45-7:00/km",
+    "descripcion": "Rodaje muy suave de activación antes del fondo del domingo."
+  },
+  "2026-06-20": {
+    "tipo": "Descanso",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Descanso total. Hidrátate bien para mañana y come carbohidratos."
+  },
+  "2026-06-21": {
+    "tipo": "Long",
+    "distancia": "8 km",
+    "ritmo": "6:45-7:15/km",
+    "descripcion": "Tirada larga. Lleva hidratación y practica tomar geles si usas."
+  },
+  "2026-06-22": {
+    "tipo": "Easy",
+    "distancia": "4 km",
+    "ritmo": "6:30-7:00/km",
+    "descripcion": "Rodaje suave para empezar la semana. Mantén conversación fluida."
+  },
+  "2026-06-23": {
+    "tipo": "Fuerza",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Circuito de fuerza: sentadillas, zancadas, puente glúteos, core."
+  },
+  "2026-06-24": {
+    "tipo": "Easy",
+    "distancia": "5 km",
+    "ritmo": "6:30-7:00/km",
+    "descripcion": "Rodaje aeróbico base. Si te sientes bien, aprieta un poco al final."
+  },
+  "2026-06-25": {
+    "tipo": "Fuerza",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Fuerza enfocada en core y estabilidad de rodillas."
+  },
+  "2026-06-26": {
+    "tipo": "Easy",
+    "distancia": "4 km",
+    "ritmo": "6:45-7:00/km",
+    "descripcion": "Rodaje muy suave de activación antes del fondo del domingo."
+  },
+  "2026-06-27": {
+    "tipo": "Descanso",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Descanso total. Hidrátate bien para mañana y come carbohidratos."
+  },
+  "2026-06-28": {
+    "tipo": "Long",
+    "distancia": "15 km",
+    "ritmo": "6:45-7:15/km",
+    "descripcion": "Tirada larga. Lleva hidratación y practica tomar geles si usas."
+  },
+  "2026-06-29": {
+    "tipo": "Easy",
+    "distancia": "5 km",
+    "ritmo": "6:30-7:00/km",
+    "descripcion": "Rodaje suave para empezar la semana. Mantén conversación fluida."
+  },
+  "2026-06-30": {
+    "tipo": "Fuerza",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Circuito de fuerza: sentadillas, zancadas, puente glúteos, core."
+  },
+  "2026-07-01": {
+    "tipo": "Easy",
+    "distancia": "6 km",
+    "ritmo": "6:30-7:00/km",
+    "descripcion": "Rodaje aeróbico base. Si te sientes bien, aprieta un poco al final."
+  },
+  "2026-07-02": {
+    "tipo": "Fuerza",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Fuerza enfocada en core y estabilidad de rodillas."
+  },
+  "2026-07-03": {
+    "tipo": "Easy",
+    "distancia": "4 km",
+    "ritmo": "6:45-7:00/km",
+    "descripcion": "Rodaje muy suave de activación antes del fondo del domingo."
+  },
+  "2026-07-04": {
+    "tipo": "Descanso",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Descanso total. Hidrátate bien para mañana y come carbohidratos."
+  },
+  "2026-07-05": {
+    "tipo": "Long",
+    "distancia": "17 km",
+    "ritmo": "6:45-7:15/km",
+    "descripcion": "Tirada larga. Lleva hidratación y practica tomar geles si usas."
+  },
+  "2026-07-06": {
+    "tipo": "Easy",
+    "distancia": "5 km",
+    "ritmo": "6:30-7:00/km",
+    "descripcion": "Rodaje suave para empezar la semana. Mantén conversación fluida."
+  },
+  "2026-07-07": {
+    "tipo": "Fuerza",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Circuito de fuerza: sentadillas, zancadas, puente glúteos, core."
+  },
+  "2026-07-08": {
+    "tipo": "Easy",
+    "distancia": "6 km",
+    "ritmo": "6:30-7:00/km",
+    "descripcion": "Rodaje aeróbico base. Si te sientes bien, aprieta un poco al final."
+  },
+  "2026-07-09": {
+    "tipo": "Fuerza",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Fuerza enfocada en core y estabilidad de rodillas."
+  },
+  "2026-07-10": {
+    "tipo": "Easy",
+    "distancia": "4 km",
+    "ritmo": "6:45-7:00/km",
+    "descripcion": "Rodaje muy suave de activación antes del fondo del domingo."
+  },
+  "2026-07-11": {
+    "tipo": "Descanso",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Descanso total. Hidrátate bien para mañana y come carbohidratos."
+  },
+  "2026-07-12": {
+    "tipo": "Long",
+    "distancia": "10 km",
+    "ritmo": "6:45-7:15/km",
+    "descripcion": "Tirada larga. Lleva hidratación y practica tomar geles si usas."
+  },
+  "2026-07-13": {
+    "tipo": "Easy",
+    "distancia": "5 km",
+    "ritmo": "6:30-7:00/km",
+    "descripcion": "Rodaje suave para empezar la semana. Mantén conversación fluida."
+  },
+  "2026-07-14": {
+    "tipo": "Fuerza",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Circuito de fuerza: sentadillas, zancadas, puente glúteos, core."
+  },
+  "2026-07-15": {
+    "tipo": "Easy",
+    "distancia": "6 km",
+    "ritmo": "6:30-7:00/km",
+    "descripcion": "Rodaje aeróbico base. Si te sientes bien, aprieta un poco al final."
+  },
+  "2026-07-16": {
+    "tipo": "Fuerza",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Fuerza enfocada en core y estabilidad de rodillas."
+  },
+  "2026-07-17": {
+    "tipo": "Easy",
+    "distancia": "4 km",
+    "ritmo": "6:45-7:00/km",
+    "descripcion": "Rodaje muy suave de activación antes del fondo del domingo."
+  },
+  "2026-07-18": {
+    "tipo": "Descanso",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Descanso total. Hidrátate bien para mañana y come carbohidratos."
+  },
+  "2026-07-19": {
+    "tipo": "Long",
+    "distancia": "18 km",
+    "ritmo": "6:45-7:15/km",
+    "descripcion": "Tirada larga. Lleva hidratación y practica tomar geles si usas."
+  },
+  "2026-07-20": {
+    "tipo": "Easy",
+    "distancia": "4 km",
+    "ritmo": "6:30-7:00/km",
+    "descripcion": "Rodaje suave para empezar la semana. Mantén conversación fluida."
+  },
+  "2026-07-21": {
+    "tipo": "Fuerza",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Circuito de fuerza: sentadillas, zancadas, puente glúteos, core."
+  },
+  "2026-07-22": {
+    "tipo": "Easy",
+    "distancia": "5 km",
+    "ritmo": "6:30-7:00/km",
+    "descripcion": "Rodaje aeróbico base. Si te sientes bien, aprieta un poco al final."
+  },
+  "2026-07-23": {
+    "tipo": "Fuerza",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Fuerza enfocada en core y estabilidad de rodillas."
+  },
+  "2026-07-24": {
+    "tipo": "Easy",
+    "distancia": "4 km",
+    "ritmo": "6:45-7:00/km",
+    "descripcion": "Rodaje muy suave de activación antes del fondo del domingo."
+  },
+  "2026-07-25": {
+    "tipo": "Descanso",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Descanso total. Hidrátate bien para mañana y come carbohidratos."
+  },
+  "2026-07-26": {
+    "tipo": "Long",
+    "distancia": "12 km",
+    "ritmo": "6:45-7:15/km",
+    "descripcion": "Tirada larga. Lleva hidratación y practica tomar geles si usas."
+  },
+  "2026-07-27": {
+    "tipo": "Easy",
+    "distancia": "5 km",
+    "ritmo": "6:30-7:00/km",
+    "descripcion": "Rodaje suave para empezar la semana. Mantén conversación fluida."
+  },
+  "2026-07-28": {
+    "tipo": "Fuerza",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Circuito de fuerza: sentadillas, zancadas, puente glúteos, core."
+  },
+  "2026-07-29": {
+    "tipo": "Easy",
+    "distancia": "6 km",
+    "ritmo": "6:30-7:00/km",
+    "descripcion": "Rodaje aeróbico base. Si te sientes bien, aprieta un poco al final."
+  },
+  "2026-07-30": {
+    "tipo": "Fuerza",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Fuerza enfocada en core y estabilidad de rodillas."
+  },
+  "2026-07-31": {
+    "tipo": "Easy",
+    "distancia": "4 km",
+    "ritmo": "6:45-7:00/km",
+    "descripcion": "Rodaje muy suave de activación antes del fondo del domingo."
+  },
+  "2026-08-01": {
+    "tipo": "Descanso",
+    "distancia": "—",
+    "ritmo": "—",
+    "descripcion": "Descanso total. Hidrátate bien para mañana y come carbohidratos."
+  },
+  "2026-08-02": {
+    "tipo": "Carrera",
+    "distancia": "21.1 km",
+    "ritmo": "A tope",
+    "descripcion": "¡Día de la carrera! Disfruta cada kilómetro. Confía en tu entrenamiento."
+  }
+}
