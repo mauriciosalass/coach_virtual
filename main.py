@@ -22,7 +22,8 @@ def send_whatsapp(message):
         return
     
     encoded_message = urllib.parse.quote(message)
-    url = f"https://api.callmebot.com/whatsapp.php?phone={WHATSAPP_PHONE}&text={encoded_message}&apikey={WHATSAPP_API_KEY}"
+    encoded_phone = urllib.parse.quote(WHATSAPP_PHONE)
+    url = f"https://api.callmebot.com/whatsapp.php?phone={encoded_phone}&text={encoded_message}&apikey={WHATSAPP_API_KEY}"
     
     try:
         response = requests.get(url)
@@ -49,10 +50,14 @@ def recordatorio_diario(sheet):
     """Función 1: Lee la fecha actual y envía el entrenamiento del día."""
     tz = pytz.timezone('America/Santiago')
     today = datetime.now(tz)
-    today_str = today.strftime("%Y-%m-%d") # Asumimos formato YYYY-MM-DD en la planilla
+    today_str_1 = today.strftime("%d-%m-%Y")
+    today_str_2 = today.strftime("%d/%m/%Y")
+    today_str_3 = f"{today.day}-{today.month}-{today.year}"
+    today_str_4 = f"{today.day}/{today.month}/{today.year}"
+    valid_dates = [today_str_1, today_str_2, today_str_3, today_str_4]
     
     records = sheet.get_all_records()
-    today_record = next((row for row in records if str(row.get('Fecha', '')).strip() == today_str), None)
+    today_record = next((row for row in records if str(row.get('Fecha', '')).strip() in valid_dates), None)
 
     if today_record:
         tipo = str(today_record.get('Tipo_Entreno', '')).strip()
@@ -84,8 +89,16 @@ def reporte_semanal(sheet):
         print("Hoy no es domingo, omitiendo reporte semanal.")
         return
 
-    # Obtener fechas de los últimos 7 días (lunes a domingo)
-    past_7_days = [(today - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(7)]
+    # Obtener fechas de los últimos 7 días en múltiples formatos (dia-mes-año)
+    past_7_days = []
+    for i in range(7):
+        d = today - timedelta(days=i)
+        past_7_days.extend([
+            d.strftime("%d-%m-%Y"),
+            d.strftime("%d/%m/%Y"),
+            f"{d.day}-{d.month}-{d.year}",
+            f"{d.day}/{d.month}/{d.year}"
+        ])
     
     records = sheet.get_all_records()
     week_records = [row for row in records if str(row.get('Fecha', '')).strip() in past_7_days]
