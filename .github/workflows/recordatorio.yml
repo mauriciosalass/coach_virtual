@@ -1,0 +1,41 @@
+name: Recordatorio y Reporte de Entrenamiento
+
+on:
+  schedule:
+    # Ejecución diaria a las 07:00 hora Chile estándar (UTC-4) -> 11:00 UTC
+    - cron: '0 11 * * *'
+    
+    # Ejecución semanal a las 20:00 hora Chile estándar (UTC-4) los Domingos -> 00:00 UTC los Lunes
+    - cron: '0 0 * * 1'
+
+  workflow_dispatch: # Permite ejecutar el script de forma manual para probar
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Chequear repositorio
+        uses: actions/checkout@v3
+        
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+        
+      - name: Ejecutar script (Diario o Semanal)
+        env:
+          GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
+          WHATSAPP_PHONE: ${{ secrets.WHATSAPP_PHONE }}
+          WHATSAPP_API_KEY: ${{ secrets.WHATSAPP_API_KEY }}
+        run: |
+          if [ "${{ github.event.schedule }}" = "0 0 * * 1" ]; then
+            echo "Cron semanal detectado. Ejecutando reporte..."
+            python main.py semanal
+          else
+            echo "Cron diario (o ejecución manual) detectado. Ejecutando recordatorio..."
+            python main.py diario
+          fi
