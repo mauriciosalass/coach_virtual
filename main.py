@@ -75,9 +75,10 @@ def recordatorio_diario(sheet):
         
         send_whatsapp(msg)
     else:
-        print(f"No se encontró entrenamiento para la fecha {today_str}.")
-        # Opcional: avisar que no hay entrenamiento. 
-        # send_whatsapp("🏃‍♂️ *Coach Virtual* \nNo encontré entrenamiento programado para hoy en tu planilla. ¡Aprovecha de descansar!")
+        print(f"No se encontró entrenamiento para las fechas generadas de hoy.")
+        # Mensaje de prueba / aviso de que no hay nada programado
+        msg = f"🏃‍♂️ *Coach Virtual* \n¡Hola! El sistema funciona perfectamente ✅.\n\nSin embargo, revisé tu planilla de Google Sheets y no encontré ningún entrenamiento anotado para la fecha de hoy ({today_str_1}). ¡Aprovecha de descansar o anota tu entrenamiento en la planilla!"
+        send_whatsapp(msg)
 
 def reporte_semanal(sheet):
     """Función 2: Calcula estadísticas de la última semana y las envía."""
