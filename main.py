@@ -175,4 +175,6 @@ if __name__ == "__main__":
         else:
             print(f"Acción desconocida: {action}")
     except Exception as e:
-        print(f"Error fatal: {e}")
+        error_msg = f"Error fatal: {type(e).__name__}: {e}"
+        print(error_msg)
+        send_whatsapp(f"🚨 *Coach Virtual - Error*\n{error_msg}")
