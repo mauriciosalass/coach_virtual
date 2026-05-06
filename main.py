@@ -48,28 +48,28 @@ def recordatorio_diario(sheet):
     """Función 1: Lee la fecha actual y envía el entrenamiento del día."""
     tz = pytz.timezone('America/Santiago')
     today = datetime.now(tz)
-    today_str = today.strftime("%d/%m/%Y")  # → "06/05/2026" para coincidir con el sheet
+    today_str = today.strftime("%d/%m/%Y")  # → "06/05/2026"
     
     print(f"Buscando entrenamiento para la fecha: {today_str}")
     
-    records = sheet.get_all_records()
-    
-    # Busca la fila cuya columna Fecha empiece con dd/mm/yyyy (ignora el " (Mon)" al final)
+    # head=2: fila 1 es el título, fila 2 son los headers reales
+    records = sheet.get_all_records(head=2)
+
     today_record = next(
         (row for row in records if str(row.get('Fecha', '')).strip().startswith(today_str)),
         None
     )
 
     if today_record:
-        tipo = str(today_record.get('Tipo_Entreno', '')).strip()
-        dist = today_record.get('Distancia_Planeada (km)', '')
-        ritmo = today_record.get('Ritmo_Objetivo', '')
+        tipo = str(today_record.get('Tipo Plan', '')).strip()
+        dist = today_record.get('Dist. Plan', '')
+        ritmo = today_record.get('Ritmo Plan', '')
         notas = str(today_record.get('Notas', '')).strip()
         
         if 'descanso' in tipo.lower() or not tipo:
             msg = f"🏃‍♂️ *Coach Virtual* \n¡Hola! Hoy es día de *{tipo or 'Descanso'}*. Tómalo con calma y recupérate para los próximos entrenamientos. 💪"
         else:
-            msg = f"🏃‍♂️ *Coach Virtual* \n¡Buen día! Este es tu entrenamiento para hoy:\n\n*Tipo:* {tipo}\n*Distancia:* {dist} km\n*Ritmo Objetivo:* {ritmo}"
+            msg = f"🏃‍♂️ *Coach Virtual* \n¡Buen día! Este es tu entrenamiento para hoy:\n\n*Tipo:* {tipo}\n*Distancia:* {dist}\n*Ritmo Objetivo:* {ritmo}"
             if notas:
                 msg += f"\n*Notas:* {notas}"
             msg += "\n\n¡A darlo todo! 🔥"
@@ -90,8 +90,8 @@ def reporte_semanal(sheet):
 
     past_7_days = [(today - timedelta(days=i)).strftime("%d/%m/%Y") for i in range(7)]
     
-    records = sheet.get_all_records()
-    # Busca filas cuya Fecha empiece con alguna de las fechas de los últimos 7 días
+    # head=2: fila 1 es el título, fila 2 son los headers reales
+    records = sheet.get_all_records(head=2)
     week_records = [
         row for row in records
         if any(str(row.get('Fecha', '')).strip().startswith(d) for d in past_7_days)
@@ -104,24 +104,24 @@ def reporte_semanal(sheet):
     
     for row in week_records:
         try:
-            val = str(row.get('Distancia_Planeada (km)', '')).replace(',', '.')
+            val = str(row.get('Dist. Plan', '')).replace(',', '').replace('km', '').strip()
             if val: vol_planeado += float(val)
         except ValueError:
             pass
             
         try:
-            val = str(row.get('Distancia_Real (km)', '')).replace(',', '.')
+            val = str(row.get('Dist. Real (km)', '')).replace(',', '.').strip()
             if val: vol_real += float(val)
         except ValueError:
             pass
 
         try:
-            val = str(row.get('Tiempo_Real (min)', '')).replace(',', '.')
+            val = str(row.get('Tiempo_Real (min)', '')).replace(',', '.').strip()
             if val: tiempo_total += float(val)
         except ValueError:
             pass
             
-        peso = str(row.get('Peso_Semanal (kg)', '')).replace(',', '.')
+        peso = str(row.get('Peso_Semanal (kg)', '')).replace(',', '.').strip()
         if peso:
             try:
                 peso_actual = float(peso)
@@ -139,7 +139,7 @@ def reporte_semanal(sheet):
         secs = int((ritmo_decimal - mins) * 60)
         ritmo_promedio = f"{mins}:{secs:02d} min/km"
 
-    msg = f"📊 *Resumen Semanal - Coach Virtual*\n\n"
+    msg = "📊 *Resumen Semanal - Coach Virtual*\n\n"
     msg += f"🎯 *Volumen Planeado:* {vol_planeado:.2f} km\n"
     msg += f"🏃‍♂️ *Volumen Real:* {vol_real:.2f} km\n"
     msg += f"📈 *Cumplimiento:* {cumplimiento:.1f}%\n"
