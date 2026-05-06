@@ -22,8 +22,7 @@ def send_whatsapp(message):
         return
     
     encoded_message = urllib.parse.quote(message)
-    encoded_phone = urllib.parse.quote(WHATSAPP_PHONE)
-    url = f"https://api.callmebot.com/whatsapp.php?phone={encoded_phone}&text={encoded_message}&apikey={WHATSAPP_API_KEY}"
+    url = f"https://api.callmebot.com/whatsapp.php?phone={WHATSAPP_PHONE}&text={encoded_message}&apikey={WHATSAPP_API_KEY}"
     
     try:
         response = requests.get(url)
@@ -43,21 +42,23 @@ def get_sheet():
     gc = gspread.service_account_from_dict(credentials)
     
     sh = gc.open(SPREADSHEET_NAME)
-    # Retornamos la primera pestaña (hoja) del documento
     return sh.sheet1
 
 def recordatorio_diario(sheet):
     """Función 1: Lee la fecha actual y envía el entrenamiento del día."""
     tz = pytz.timezone('America/Santiago')
     today = datetime.now(tz)
-    today_str_1 = today.strftime("%d-%m-%Y")
-    today_str_2 = today.strftime("%d/%m/%Y")
-    today_str_3 = f"{today.day}-{today.month}-{today.year}"
-    today_str_4 = f"{today.day}/{today.month}/{today.year}"
-    valid_dates = [today_str_1, today_str_2, today_str_3, today_str_4]
+    today_str = today.strftime("%d/%m/%Y")  # → "06/05/2026" para coincidir con el sheet
+    
+    print(f"Buscando entrenamiento para la fecha: {today_str}")
     
     records = sheet.get_all_records()
-    today_record = next((row for row in records if str(row.get('Fecha', '')).strip() in valid_dates), None)
+    
+    # Busca la fila cuya columna Fecha empiece con dd/mm/yyyy (ignora el " (Mon)" al final)
+    today_record = next(
+        (row for row in records if str(row.get('Fecha', '')).strip().startswith(today_str)),
+        None
+    )
 
     if today_record:
         tipo = str(today_record.get('Tipo_Entreno', '')).strip()
@@ -75,34 +76,26 @@ def recordatorio_diario(sheet):
         
         send_whatsapp(msg)
     else:
-        print(f"No se encontró entrenamiento para las fechas generadas de hoy.")
-        # Mensaje de prueba / aviso de que no hay nada programado
-        msg = f"🏃‍♂️ *Coach Virtual* \n¡Hola! El sistema funciona perfectamente ✅.\n\nSin embargo, revisé tu planilla de Google Sheets y no encontré ningún entrenamiento anotado para la fecha de hoy ({today_str_1}). ¡Aprovecha de descansar o anota tu entrenamiento en la planilla!"
-        send_whatsapp(msg)
+        print(f"No se encontró entrenamiento para la fecha {today_str}.")
+        send_whatsapp(f"🏃‍♂️ *Coach Virtual*\nNo encontré entrenamiento para hoy ({today_str}) en tu planilla. Revisa que las fechas estén en formato dd/mm/yyyy.")
 
 def reporte_semanal(sheet):
     """Función 2: Calcula estadísticas de la última semana y las envía."""
     tz = pytz.timezone('America/Santiago')
     today = datetime.now(tz)
     
-    # Validar que sea domingo (weekday 6 es domingo)
     if today.weekday() != 6:
         print("Hoy no es domingo, omitiendo reporte semanal.")
         return
 
-    # Obtener fechas de los últimos 7 días en múltiples formatos (dia-mes-año)
-    past_7_days = []
-    for i in range(7):
-        d = today - timedelta(days=i)
-        past_7_days.extend([
-            d.strftime("%d-%m-%Y"),
-            d.strftime("%d/%m/%Y"),
-            f"{d.day}-{d.month}-{d.year}",
-            f"{d.day}/{d.month}/{d.year}"
-        ])
+    past_7_days = [(today - timedelta(days=i)).strftime("%d/%m/%Y") for i in range(7)]
     
     records = sheet.get_all_records()
-    week_records = [row for row in records if str(row.get('Fecha', '')).strip() in past_7_days]
+    # Busca filas cuya Fecha empiece con alguna de las fechas de los últimos 7 días
+    week_records = [
+        row for row in records
+        if any(str(row.get('Fecha', '')).strip().startswith(d) for d in past_7_days)
+    ]
 
     vol_planeado = 0.0
     vol_real = 0.0
@@ -110,28 +103,24 @@ def reporte_semanal(sheet):
     peso_actual = None
     
     for row in week_records:
-        # Distancia Planeada
         try:
             val = str(row.get('Distancia_Planeada (km)', '')).replace(',', '.')
             if val: vol_planeado += float(val)
         except ValueError:
             pass
             
-        # Distancia Real
         try:
             val = str(row.get('Distancia_Real (km)', '')).replace(',', '.')
             if val: vol_real += float(val)
         except ValueError:
             pass
 
-        # Tiempo Real
         try:
             val = str(row.get('Tiempo_Real (min)', '')).replace(',', '.')
             if val: tiempo_total += float(val)
         except ValueError:
             pass
             
-        # Peso Semanal (se toma el último válido de la semana)
         peso = str(row.get('Peso_Semanal (kg)', '')).replace(',', '.')
         if peso:
             try:
@@ -145,7 +134,7 @@ def reporte_semanal(sheet):
 
     ritmo_promedio = "N/A"
     if vol_real > 0 and tiempo_total > 0:
-        ritmo_decimal = tiempo_total / vol_real # min/km
+        ritmo_decimal = tiempo_total / vol_real
         mins = int(ritmo_decimal)
         secs = int((ritmo_decimal - mins) * 60)
         ritmo_promedio = f"{mins}:{secs:02d} min/km"
@@ -173,7 +162,6 @@ def reporte_semanal(sheet):
 if __name__ == "__main__":
     import sys
     
-    # Recibir la acción por argumento (diario o semanal)
     action = sys.argv[1] if len(sys.argv) > 1 else "diario"
     
     try:
